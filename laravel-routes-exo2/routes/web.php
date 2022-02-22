@@ -15,7 +15,10 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/about', function () {
-    return view("About");
+    $prenom = "Imane";
+    $nom = "Assbai";
+    // $etudiante = compact(['prenom','nom']);
+    return view("About",compact('prenom','nom'));
 });
 
 // # Exerxcice 3

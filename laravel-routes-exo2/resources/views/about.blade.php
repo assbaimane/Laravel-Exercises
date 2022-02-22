@@ -17,10 +17,7 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
-            }
-            body{
-                background: #003da7;
-                color: white;
+                color: #003da7;
             }
         </style>
     </head>
@@ -43,6 +40,7 @@
             <div class="text-center">
                 <h1>Yes</h1>
                 <h2>Tu es sur la page About !</h2>
+                <p>Je viens de détecter que tu étais {{$prenom}} {{$nom}}</p>
             </div>
         </div>
     </body>
