@@ -72,6 +72,8 @@ Route::get('/30Exo', function(){
     // $b--;
 
     // 9. Création d'un tableau
+
+    
     // 10. Afficher la première donnée d'un tableau
     // 11. Faire une condition
     // 12. Condition ternaire
