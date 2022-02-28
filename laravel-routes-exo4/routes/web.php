@@ -2,22 +2,28 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-// # Exercice 1
-// 1. Vous allez créer un dossier laravel sous le nom de "laravel-routes-exo1"
-
 Route::get('/', function () {
-    return view("Navigation");
+    return view("Welcome");
 });
 
-Route::get('/{prenom}/{nom}', function ($prenom,$nom) {
-    return view("Welcome",compact('prenom','nom'));
-});
+// Route::get('/{var1}', function ($var1) {
+//     $var1 = "fraises";
+//     return view("/pages/about", compact('var1'));
+// });
 
+// // http://127.0.0.1:8000/contact/a/b/c
+// // http://127.0.0.1:8000/contact/0493473493/assbaimane@hotmail.com/bruxelles
+// Route::get('/{tel}/{mail}/{adresse}', function ($tel,$mail,$adresse) {
+    
+//     return view("/pages/contact", compact('tel','mail','adresse'));
+// });
 
-// # Exerxcice 4
-// 1. Dans un nouveau projet laravel-route-exo3
-// 2. Videz le contenu de la page welcome
-// 3. Ajoutez une structure html de base
-// 4. Modifiez la route de base en route dynamique avec 2 variables
-// 5. Affichez le contenu de ces deux variables dans la page welcome
+// Route::get("/coding", function () {
+//     $prenoms = array("Maxime", "Elias", "Nicolas", "Ayhan", "Cactus");
+//     $personne = (object)[
+//         "nom" => "Coding",
+//         "prenom" => "Elias",
+//         "age" => 25
+//     ];
+//     return view("pages.coding", compact("prenoms", "personne"));
+// });
