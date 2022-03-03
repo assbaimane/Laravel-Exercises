@@ -10,11 +10,16 @@ class Commentaire extends Model
     use HasFactory;
     protected $table = 'commentaires';
 
-    protected $hidden = [
+    protected $fillable = [
         'nom',
         'prenom',
+        'age',
         'date',
         'commentaire',
-        'poste',
+        'poste'
+    ];
+
+    protected $guarded = [
+        'id'
     ];
 }

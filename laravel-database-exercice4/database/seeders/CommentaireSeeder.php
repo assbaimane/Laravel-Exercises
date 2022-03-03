@@ -16,7 +16,7 @@ class CommentaireSeeder extends Seeder
      */
     public function run()
     {
-        $commentaires = Commentaire::factory()->count(50)->create();
+        // $commentaires = Commentaire::factory()->count(50)->create();
         // DB::table("commentaires")->insert([
         //     "nom" => "Imane",
         //     "prenom" => "Assbai",

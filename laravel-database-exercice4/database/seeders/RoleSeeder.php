@@ -16,7 +16,7 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        $roles = Role::factory()->count(10)->create();
+        // $roles = Role::factory()->count(10)->create();
         // DB::table("roles")->insert([
         //     "nom" => "Admin",
         //     "numero" => "1",
