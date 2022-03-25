@@ -1,0 +1,13 @@
+@extends("front/layouts.app")
+@section('content')
+    @include('front/partials.nav')
+    @include('front/partials.home')
+    @include('front/partials.about')
+    @include('front/partials.fact')
+    @include('front/partials.skill')
+    @include('front/partials.portfolio')
+    @include('front/partials.service')
+    @include('front/partials.testimonial')
+    @include('front/partials.contactus')
+    @include('front/partials.footer')
+@endsection
