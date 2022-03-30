@@ -7,33 +7,33 @@
       </div>
     <ul class="nav-list">
       <li>
-          <a href="/equipe">
-            <i class='fa-solid fa-paintbrush-pencil' ></i>
+          <a href="/back/equipe">
+            <i class='fa-solid fa-users' ></i>
             <span class="links_name">Equipe</span>
           </a>
           <span class="tooltip">Equipe</span>
       </li>
       <li>
-          <a href="/joueur">
-            <i class='fa-solid fa-medal'></i>
+          <a href="/back/joueur">
+            <i class='fa-solid fa-user'></i>
             <span class="links_name">Joueur</span>
           </a>
           <span class="tooltip">Joueur</span>
       </li>
-      <li>
-        <a href="/role">
+      {{-- <li>
+        <a href="/role.index">
           <i class='fa-solid fa-medal' ></i>
           <span class="links_name">Role</span>
         </a>
         <span class="tooltip">Role</span>
       </li>
       <li>
-          <a href="/photo">
+          <a href="/photo.index">
             <i class='fa-solid fa-medal' ></i>
             <span class="links_name">Photo</span>
           </a>
           <span class="tooltip">Photo</span>
-      </li>
+      </li> --}}
     </ul>
   </div>
   <section class="home-section">

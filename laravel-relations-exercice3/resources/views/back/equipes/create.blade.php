@@ -13,35 +13,47 @@
         @endif
         <form action='{{ route('equipe.store') }}' method='post'>
             @csrf
-            <div>
-                <label for=''>nom</label>
-                <input type='text' name='nom'>
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="nom" class="form-control" name="nom">
             </div>
-            <div>
-                <label for=''>ville</label>
-                <input type='text' name='ville'>
+
+            <div class="form-group">
+                <label for="ville">Ville</label>
+                <input type="ville" class="form-control" name="ville">
             </div>
-            <div>
-                <label for=''>pays</label>
-                <input type='text' name='pays'>
+
+            <div class="form-group">
+                <label for="pays">Pays</label>
+                <input type="pays" class="form-control" name="pays">
             </div>
-            <div>
-                <label for=''>nbmaxavant</label>
-                <input type='text' name='nbmaxavant'>
+
+            <div class="form-group">
+                <label for="continent">Continent</label>
+                <input type="continent" class="form-control" name="continent">
             </div>
-            <div>
-                <label for=''>nbmaxarriere</label>
-                <input type='text' name='nbmaxarriere'>
+
+            <div class="form-group">
+                <label for="nbmaxavant">Nombre max joueurs à l'avant</label>
+                <input type="nbmaxavant" class="form-control" name="nbmaxavant">
             </div>
-            <div>
-                <label for=''>nbmaxcentraux</label>
-                <input type='text' name='nbmaxcentraux'>
+
+            <div class="form-group">
+                <label for="nbmaxarriere">Nombre max joueurs à l'arrière</label>
+                <input type="nbmaxarriere" class="form-control" name="nbmaxarriere">
             </div>
-            <div>
-                <label for=''>nbmaxremplacant</label>
-                <input type='text' name='nbmaxremplacant'>
+
+            <div class="form-group">
+                <label for="nbmaxcentraux">Nombre max joueurs centraux</label>
+                <input type="nbmaxcentraux" class="form-control" name="nbmaxcentraux">
             </div>
-            <button type='submit'>Create</button> {{-- create_blade_anchor --}} 
+
+            <div class="form-group">
+                <label for="nbmaxremplacant">Nombre max joueurs remplacants</label>
+                <input type="nbmaxremplacant" class="form-control" name="nbmaxremplacant">
+            </div>
+
+            <button class="mt-3 btn btn-primary" type='submit'>Create</button> {{-- create_blade_anchor --}} 
         </form>
     </div>
 @endsection

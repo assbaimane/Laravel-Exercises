@@ -13,6 +13,7 @@
         @endif
         <form action='{{ route('photo.update' , $photo->id) }}' method='post'>
             @csrf
+            @method('put')
             <div>
                 <label for=''>photo</label>
                 <input type='text' name='photo' value='{{ $photo->photo }}'>

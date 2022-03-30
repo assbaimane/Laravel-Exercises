@@ -13,6 +13,7 @@
         @endif
         <form action='{{ route('role.update' , $role->id) }}' method='post'>
             @csrf
+            @method('put')
             <div>
                 <label for=''>role</label>
                 <input type='text' name='role' value='{{ $role->role }}'>
