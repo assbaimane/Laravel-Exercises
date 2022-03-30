@@ -12,9 +12,8 @@ class Photo extends Model
     protected $table = 'photos';
 
     protected $fillable = [
-        'name',
-        'logo',
-        'tabs',
-        'button'
+        'nom',
+        'lien',
+        'album'
     ];
 }

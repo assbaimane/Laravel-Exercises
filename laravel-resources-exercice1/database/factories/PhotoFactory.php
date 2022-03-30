@@ -17,7 +17,9 @@ class PhotoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nom' => $this->faker->lastName(),
+            'lien' => $this->faker->image(),
+            'album' => $this->faker->word()
         ];
     }
 }

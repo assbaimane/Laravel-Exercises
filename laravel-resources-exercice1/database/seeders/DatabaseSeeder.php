@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Album;
+use App\Models\Photo;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,10 +17,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            AlbumSeeder::class,
-            PhotoSeeder::class,
-            UserSeeder::class,
-        ]);
+        User::factory()->count(5)->create(); 
+        Album::factory()->count(10)->create(); 
+        Photo::factory()->count(20)->create(); 
+        // $this->call([
+        //     AlbumSeeder::class,
+        //     PhotoSeeder::class,
+        //     UserSeeder::class,
+        // ]);
     }
 }

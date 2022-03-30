@@ -12,7 +12,9 @@ class Album extends Model
     protected $table = 'albums';
 
     protected $fillable = [
-        'album',
-        'sousalbum'
+        'nom',
+        'description',
+        'auteur',
+        'nombre'
     ];
 }

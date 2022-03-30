@@ -17,7 +17,10 @@ class AlbumFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nom' => $this->faker->lastName(),
+            'description' => $this->faker->paragraph(),
+            'auteur' => $this->faker->firstName(),
+            'nombre' => $this->faker->numberBetween(0,1000),
         ];
     }
 }

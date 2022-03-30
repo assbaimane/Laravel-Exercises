@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->string('name',255);
-            $table->string('logo',255);
-            $table->string('tabs',50);
-            $table->string("button",255);
+            $table->string('nom',255);
+            $table->string('lien',255);
+            $table->string('album',50);
             $table->timestamps();
         });
     }

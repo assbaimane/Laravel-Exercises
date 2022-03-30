@@ -3,7 +3,7 @@
     <div class="logo-details">
       <i class='icon de code'></i>
         <div class="logo_name">CodingSchool</div>
-        <i class='text-light  fa-bars' id="btn" ></i>
+        <i class='text-light fas fa-laptop-code' id="btn" ></i>
       </div>
     <ul class="nav-list">
       <li>
