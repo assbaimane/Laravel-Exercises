@@ -21,4 +21,8 @@ class Equipe extends Model
     ]; // model_anchor
      
     protected $table = 'equipes';
+
+    public function joueurs(){
+        return $this->hasMany(Joueur::class);
+    }
 }

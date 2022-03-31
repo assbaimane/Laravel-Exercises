@@ -24,6 +24,7 @@ class PhotoController extends Controller
          'photo'=> 'required',
         ]); // store_validated_anchor;
         $photo->photo = $request->photo;
+        $photo->joueur_id = $request->joueur;
         $photo->save(); // store_anchor
         return redirect()->route("photo.index")->with('message', "Successful storage !");
     }

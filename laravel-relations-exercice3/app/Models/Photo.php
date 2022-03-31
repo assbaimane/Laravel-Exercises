@@ -14,4 +14,8 @@ class Photo extends Model
     ]; // model_anchor
      
     protected $table = 'photos';
+
+    public function joueurs(){
+        return $this->belongsTo(Joueur::class);
+    }
 }

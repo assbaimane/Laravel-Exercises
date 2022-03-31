@@ -7,6 +7,7 @@
       </div>
     <ul class="nav-list">
       <li>
+          {{-- <a href={{ Route('equipe.index') }}> --}}
           <a href="/back/equipe">
             <i class='fa-solid fa-users' ></i>
             <span class="links_name">Equipe</span>

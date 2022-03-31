@@ -19,7 +19,20 @@ class Joueur extends Model
         'origine',
         'role',
         'photo',
+        'equipe_id'
     ]; // model_anchor
      
     protected $table = 'joueurs';
+
+    public function equipes(){
+        return $this->belongsTo(Equipe::class);
+    }
+
+    // public function roles(){
+    //     return $this->belongsTo(Role::class);
+    // }
+
+    public function photos(){
+        return $this->hasOne(Photo::class);
+    }
 }

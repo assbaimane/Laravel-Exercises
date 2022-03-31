@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('role');
             $table->string('photo');
             $table->foreignId('equipe_id')->constrained('equipes','id');
+            // $table->foreignId('role_id')->constrained('roles','id');
             $table->timestamps();
         });
     }

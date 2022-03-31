@@ -41,7 +41,7 @@ class EquipeController extends Controller
         $equipe->save(); // store_anchor
         return redirect()->route("equipe.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $equipe = Equipe::find($id);
         return view("/back/equipes/read",compact("equipe"));
@@ -78,6 +78,8 @@ class EquipeController extends Controller
     public function destroy($id)
     {
         $equipe = Equipe::find($id);
+        // $equipe->steps->delete();
+        // $equipe =Equipe::where('id',$id)->delete();
         $equipe->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }

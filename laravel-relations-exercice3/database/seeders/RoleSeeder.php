@@ -15,9 +15,17 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
-            'role' => '',
-        ]);
-        //
+        // DB::table("roles")->insert([
+        //     'nom' => 'Avant',
+        // ]);
+        // DB::table("roles")->insert([
+        //     'nom' => 'Arrière',
+        // ]);
+        // DB::table("roles")->insert([
+        //     'nom' => 'Central',
+        // ]);
+        // DB::table("roles")->insert([
+        //     'nom' => 'Remplaçant',
+        // ]);
     }
 }

@@ -40,6 +40,8 @@ class JoueurController extends Controller
         $joueur->origine = $request->origine;
         $joueur->role = $request->role;
         $joueur->photo = $request->photo;
+        // $joueur->role_id = $request->role;
+        $joueur->equipe_id = $request->equipe;
         $joueur->save(); // store_anchor
         return redirect()->route("joueur.index")->with('message', "Successful storage !");
     }

@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RoleController;
-use App\Http\Controllers\joueurController;
-use App\Http\Controllers\equipeController;
+use App\Http\Controllers\JoueurController;
+use App\Http\Controllers\EquipeController;
 
 /*
 |--------------------------------------------------------------------------

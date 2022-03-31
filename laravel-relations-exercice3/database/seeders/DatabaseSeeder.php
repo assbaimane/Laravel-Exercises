@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Equipe;
+use App\Models\Joueur;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,7 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Equipe::factory(5)->create();
+        Joueur::factory(45)->create();
         $this->call(
             RoleSeeder::class
         );

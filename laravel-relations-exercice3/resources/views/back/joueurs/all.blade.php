@@ -1,7 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1 class='my-5'>joueurs</h1>
+        <h1 class='py-5'>Joueurs</h1>
         @if (session()->has('message'))
             <div class='alert alert-success'>
                 {{ session()->get('message') }}
@@ -21,16 +21,16 @@
             <thead>
                 <tr>
                     <th scope='col'>#</th>
+                    <th scope='col'>Nom</th>
+                    <th scope='col'>Prenom</th>
+                    <th scope='col'>Age</th>
+                    <th scope='col'>Telephone</th>
+                    <th scope='col'>Email</th>
+                    <th scope='col'>Genre</th>
+                    <th scope='col'>Origine</th>
+                    <th scope='col'>Role</th>
+                    <th scope='col'>Photo</th>
                     <th scope='col'>Action</th>
-                    <th scope='col'>nom</th>
-                    <th scope='col'>prenom</th>
-                    <th scope='col'>age</th>
-                    <th scope='col'>telephone</th>
-                    <th scope='col'>email</th>
-                    <th scope='col'>genre</th>
-                    <th scope='col'>origine</th>
-                    <th scope='col'>role</th>
-                    <th scope='col'>photo</th>
                 </tr> {{-- all_tr_anchor --}}
             </thead>
             <tbody>
@@ -50,10 +50,10 @@
                             <div class='d-flex'>
                                 <form action='{{ route('joueur.destroy', $joueur->id) }}' method='post'>
                                     @csrf
-                                    <button class=btn btn-danger type=submit>Delete</button>
+                                    <button class='btn btn-danger' type='submit'>Delete</button>
                                 </form>
                                 <a class='btn btn-primary' href='{{ route('joueur.edit', $joueur->id) }}' role='button'>Edit</a>
-                                <a class='btn btn-primary' href='{{ route('joueur.read', $joueur->id) }}' role='button'>Read</a>
+                                <a class='btn btn-primary' href='{{ route('joueur.show', $joueur->id) }}' role='button'>Show</a>
                             </div>
                         </td>
                     </tr>

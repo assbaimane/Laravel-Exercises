@@ -1,7 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1>equipes</h1>
+        <h1>Equipes</h1>
         @if ($errors->any())
             <div class='alert alert-danger'>
                 <ul>
@@ -16,42 +16,42 @@
             @method('put')
             <div class="form-group">
                 <label for="nom">Nom</label>
-                <input type="nom" class="form-control" name="nom" value ='{{ equipe->nom }}'>
+                <input type="nom" class="form-control" name="nom" value ='{{ $equipe->nom }}'>
             </div>
 
             <div class="form-group">
                 <label for="ville">Ville</label>
-                <input type="ville" class="form-control" name="ville" value ='{{ equipe->ville }}'>
+                <input type="ville" class="form-control" name="ville" value ='{{ $equipe->ville }}'>
             </div>
 
             <div class="form-group">
                 <label for="pays">Pays</label>
-                <input type="pays" class="form-control" name="pays" value ='{{ equipe->pays }}'>
+                <input type="pays" class="form-control" name="pays" value ='{{ $equipe->pays }}'>
             </div>
 
             <div class="form-group">
                 <label for="continent">Continent</label>
-                <input type="continent" class="form-control" name="continent" value ='{{ equipe->continent }}'>
+                <input type="continent" class="form-control" name="continent" value ='{{ $equipe->continent }}'>
             </div>
 
             <div class="form-group">
                 <label for="nbmaxavant">Nombre max joueurs à l'avant</label>
-                <input type="nbmaxavant" class="form-control" name="nbmaxavant" value ='{{ equipe->nbmaxavant }}'>
+                <input type="nbmaxavant" class="form-control" name="nbmaxavant" value ='{{ $equipe->nbmaxavant }}'>
             </div>
 
             <div class="form-group">
                 <label for="nbmaxarriere">Nombre max joueurs à l'arrière</label>
-                <input type="nbmaxarriere" class="form-control" name="nbmaxarriere" value ='{{ equipe->nbmaxarriere }}'>
+                <input type="nbmaxarriere" class="form-control" name="nbmaxarriere" value ='{{ $equipe->nbmaxarriere }}'>
             </div>
 
             <div class="form-group">
                 <label for="nbmaxcentraux">Nombre max joueurs centraux</label>
-                <input type="nbmaxcentraux" class="form-control" name="nbmaxcentraux" value ='{{ equipe->nbmaxcentraux }}'>
+                <input type="nbmaxcentraux" class="form-control" name="nbmaxcentraux" value ='{{ $equipe->nbmaxcentraux }}'>
             </div>
 
             <div class="form-group">
                 <label for="nbmaxremplacant">Nombre max joueurs remplacants</label>
-                <input type="nbmaxremplacant" class="form-control" name="nbmaxremplacant" value ='{{ equipe->nbmaxremplacant }}'>
+                <input type="nbmaxremplacant" class="form-control" name="nbmaxremplacant" value ='{{ $equipe->nbmaxremplacant }}'>
             </div>
 
             {{-- <div>
