@@ -1,19 +1,19 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1 class='my-5'>equipes</h1>
+        <h1 class='py-5'>Equipes</h1>
         <table class='table'>
             <thead>
                 <tr>
                     <th scope='col'>#</th>
+                    <th scope='col'>Nom</th>
+                    <th scope='col'>Ville</th>
+                    <th scope='col'>Pays</th>
+                    <th scope='col'>Avant</th>
+                    <th scope='col'>Arriere</th>
+                    <th scope='col'>Centraux</th>
+                    <th scope='col'>Remplacant</th>
                     <th scope='col'>Action</th>
-                    <th scope='col'>nom</th>
-                    <th scope='col'>ville</th>
-                    <th scope='col'>pays</th>
-                    <th scope='col'>nbmaxavant</th>
-                    <th scope='col'>nbmaxarriere</th>
-                    <th scope='col'>nbmaxcentraux</th>
-                    <th scope='col'>nbmaxremplacant</th>
                 </tr> {{-- read_tr_anchor --}}
             </thead>
             <tbody>

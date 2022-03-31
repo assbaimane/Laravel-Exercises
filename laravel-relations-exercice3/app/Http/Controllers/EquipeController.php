@@ -80,6 +80,7 @@ class EquipeController extends Controller
         $equipe = Equipe::find($id);
         // $equipe->steps->delete();
         // $equipe =Equipe::where('id',$id)->delete();
+        
         $equipe->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }
