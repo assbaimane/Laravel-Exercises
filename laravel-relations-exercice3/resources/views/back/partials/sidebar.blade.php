@@ -2,12 +2,11 @@
   <div class="sidebar">
     <div class="logo-details">
       <i class='icon de code'></i>
-        <div class="logo_name">CodingSchool</div>
-        <i class='text-light fa-solid fa-laptop-code' id="btn" ></i>
+        <div class="logo_name">Volley</div>
+        <i class='text-light fa-solid fa-volleyball' id="btn" ></i>
       </div>
     <ul class="nav-list">
       <li>
-          {{-- <a href={{ Route('equipe.index') }}> --}}
           <a href="/back/equipe">
             <i class='fa-solid fa-users' ></i>
             <span class="links_name">Equipe</span>
@@ -21,20 +20,6 @@
           </a>
           <span class="tooltip">Joueur</span>
       </li>
-      {{-- <li>
-        <a href="/role.index">
-          <i class='fa-solid fa-medal' ></i>
-          <span class="links_name">Role</span>
-        </a>
-        <span class="tooltip">Role</span>
-      </li>
-      <li>
-          <a href="/photo.index">
-            <i class='fa-solid fa-medal' ></i>
-            <span class="links_name">Photo</span>
-          </a>
-          <span class="tooltip">Photo</span>
-      </li> --}}
     </ul>
   </div>
   <section class="home-section">

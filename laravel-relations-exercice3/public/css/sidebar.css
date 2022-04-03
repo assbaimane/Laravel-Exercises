@@ -12,7 +12,7 @@
   top: 0;
   height: 100%;
   width: 78px;
-  background: #11101D;
+  background: #4239a5;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -69,12 +69,13 @@
   line-height: 60px;
 }
 .sidebar .nav-list{
+  padding-left: 0%;
   margin-top: 20px;
   height: 100%;
 }
 .sidebar li{
   position: relative;
-  margin: 8px 0;
+  margin-bottom: 5%;
   list-style: none;
 }
 .sidebar li .tooltip{
@@ -123,10 +124,10 @@
 .sidebar li a{
   display: flex;
   height: 100%;
+  min-width: 50px;
   width: 100%;
   border-radius: 12px;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   text-decoration: none;
   transition: all 0.4s ease;
   background: #11101D;
@@ -154,7 +155,6 @@
   color: #11101D;
 }
 .sidebar li i{
-  padding: 5%;
   height: 50px;
   line-height: 50px;
   font-size: 18px;
@@ -218,6 +218,8 @@
   min-height: 100vh;
   top: 0px;
   left : 78px;
+  padding-left: 5%;
+  padding-top: 3%;
   width: calc(100% - 78px);
   transition: all 0.5s ease;
   z-index: 2;
@@ -231,7 +233,13 @@
   color: #11101d;
   font-size: 25px;
   font-weight: 500;
-  margin: 30px
+  margin: 30px;
+}
+.moutarde{
+  color:rgb(207, 159, 0);
+}
+.purple{
+  color: #4239a5;
 }
 @media (max-width: 420px) {
   .sidebar li .tooltip{
