@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipe;
+use App\Models\Joueur;
 use Illuminate\Http\Request;
 
 class EquipeController extends Controller
@@ -11,7 +12,9 @@ class EquipeController extends Controller
     public function index()
     {
         $equipes = Equipe::all();
-        return view("/back/equipes/all",compact("equipes"));
+        $joueuravant = Joueur::where('role_id','1');
+        // dd($joueuravant);
+        return view("/back/equipes/all",compact("equipes","joueuravant"));
     }
     public function create()
     {
@@ -25,19 +28,19 @@ class EquipeController extends Controller
          'ville'=> 'required',
          'pays'=> 'required',
          'continent'=> 'required',
-         'nbmaxavant'=> 'required',
-         'nbmaxarriere'=> 'required',
-         'nbmaxcentraux'=> 'required',
-         'nbmaxremplacant'=> 'required',
+         'nbavant'=> 'required',
+         'nbarriere'=> 'required',
+         'nbcentraux'=> 'required',
+         'nbremplacant'=> 'required',
         ]); // store_validated_anchor;
         $equipe->nom = $request->nom;
         $equipe->ville = $request->ville;
         $equipe->pays = $request->pays;
         $equipe->continent = $request->continent;
-        $equipe->nbmaxavant = $request->nbmaxavant;
-        $equipe->nbmaxarriere = $request->nbmaxarriere;
-        $equipe->nbmaxcentraux = $request->nbmaxcentraux;
-        $equipe->nbmaxremplacant = $request->nbmaxremplacant;
+        $equipe->nbavant = $request->nbavant;
+        $equipe->nbarriere = $request->nbarriere;
+        $equipe->nbcentraux = $request->nbcentraux;
+        $equipe->nbremplacant = $request->nbremplacant;
         $equipe->save(); // store_anchor
         return redirect()->route("equipe.index")->with('message', "Successful storage !");
     }
@@ -59,19 +62,19 @@ class EquipeController extends Controller
          'ville'=> 'required',
          'pays'=> 'required',
          'continent'=> 'required',
-         'nbmaxavant'=> 'required',
-         'nbmaxarriere'=> 'required',
-         'nbmaxcentraux'=> 'required',
-         'nbmaxremplacant'=> 'required',
+         'nbavant'=> 'required',
+         'nbarriere'=> 'required',
+         'nbcentraux'=> 'required',
+         'nbremplacant'=> 'required',
         ]); // update_validated_anchor;
         $equipe->nom = $request->nom;
         $equipe->ville = $request->ville;
         $equipe->pays = $request->pays;
         $equipe->continent = $request->continent;
-        $equipe->nbmaxavant = $request->nbmaxavant;
-        $equipe->nbmaxarriere = $request->nbmaxarriere;
-        $equipe->nbmaxcentraux = $request->nbmaxcentraux;
-        $equipe->nbmaxremplacant = $request->nbmaxremplacant;
+        $equipe->nbavant = $request->nbavant;
+        $equipe->nbarriere = $request->nbarriere;
+        $equipe->nbcentraux = $request->nbcentraux;
+        $equipe->nbremplacant = $request->nbremplacant;
         $equipe->save(); // update_anchor
         return redirect()->route("equipe.index")->with('message', "Successful update !");
     }

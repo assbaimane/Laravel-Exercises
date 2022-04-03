@@ -34,23 +34,23 @@
             </div>
 
             <div class="form-group">
-                <label for="nbmaxavant">Nombre max joueurs à l'avant</label>
-                <input type="nbmaxavant" class="form-control" name="nbmaxavant">
+                <label for="nbavant">Nombre max joueurs à l'avant</label>
+                <input type="nbavant" class="form-control" name="nbavant">
             </div>
 
             <div class="form-group">
-                <label for="nbmaxarriere">Nombre max joueurs à l'arrière</label>
-                <input type="nbmaxarriere" class="form-control" name="nbmaxarriere">
+                <label for="nbarriere">Nombre max joueurs à l'arrière</label>
+                <input type="nbarriere" class="form-control" name="nbarriere">
             </div>
 
             <div class="form-group">
-                <label for="nbmaxcentraux">Nombre max joueurs centraux</label>
-                <input type="nbmaxcentraux" class="form-control" name="nbmaxcentraux">
+                <label for="nbcentraux">Nombre max joueurs centraux</label>
+                <input type="nbcentraux" class="form-control" name="nbcentraux">
             </div>
 
             <div class="form-group">
-                <label for="nbmaxremplacant">Nombre max joueurs remplacants</label>
-                <input type="nbmaxremplacant" class="form-control" name="nbmaxremplacant">
+                <label for="nbremplacant">Nombre max joueurs remplacants</label>
+                <input type="nbremplacant" class="form-control" name="nbremplacant">
             </div>
 
             <button class="mt-3 btn btn-primary" type='submit'>Create</button> {{-- create_blade_anchor --}} 

@@ -14,10 +14,10 @@ class Equipe extends Model
         'ville',
         'pays',
         'continent',
-        'nbmaxavant',
-        'nbmaxarriere',
-        'nbmaxcentraux',
-        'nbmaxremplacant',
+        'nbavant',
+        'nbarriere',
+        'nbcentraux',
+        'nbremplacant',
     ]; // model_anchor
      
     protected $table = 'equipes';

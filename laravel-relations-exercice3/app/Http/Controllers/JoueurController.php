@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipe;
 use App\Models\Joueur;
+use App\Models\Photo;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class JoueurController extends Controller
@@ -15,11 +18,14 @@ class JoueurController extends Controller
     }
     public function create()
     {
-        return view("/back/joueurs/create");
+        $equipes = Equipe::all();
+        $roles = Role::all();
+        return view("/back/joueurs/create", compact('equipes','roles'));
     }
     public function store(Request $request)
     {
         $joueur = new Joueur;
+        $joueur = new Photo;
         $request->validate([
          'nom'=> 'required',
          'prenom'=> 'required',
@@ -29,7 +35,8 @@ class JoueurController extends Controller
          'genre'=> 'required',
          'origine'=> 'required',
          'role'=> 'required',
-         'photo'=> 'required',
+         'photo_id'=> 'required',
+         'equipe_id'=> 'required'
         ]); // store_validated_anchor;
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
@@ -38,8 +45,8 @@ class JoueurController extends Controller
         $joueur->email = $request->email;
         $joueur->genre = $request->genre;
         $joueur->origine = $request->origine;
-        $joueur->role = $request->role;
         $joueur->photo = $request->photo;
+        $joueur->role_id = $request->role;
         $joueur->equipe_id = $request->equipe;
         $joueur->save(); // store_anchor
         return redirect()->route("joueur.index")->with('message', "Successful storage !");
@@ -75,7 +82,8 @@ class JoueurController extends Controller
         $joueur->email = $request->email;
         $joueur->genre = $request->genre;
         $joueur->origine = $request->origine;
-        $joueur->role = $request->role;
+        $joueur->role_id = $request->role;
+        $joueur->equipe_id = $request->role;
         $joueur->photo = $request->photo;
         $joueur->save(); // update_anchor
         return redirect()->route("joueur.index")->with('message', "Successful update !");

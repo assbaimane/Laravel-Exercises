@@ -35,23 +35,23 @@
             </div>
 
             <div class="form-group">
-                <label for="nbmaxavant">Nombre max joueurs à l'avant</label>
-                <input type="nbmaxavant" class="form-control" name="nbmaxavant" value ='{{ $equipe->nbmaxavant }}'>
+                <label for="nbavant">Nombre max joueurs à l'avant</label>
+                <input type="nbavant" class="form-control" name="nbavant" value ='{{ $equipe->nbavant }}'>
             </div>
 
             <div class="form-group">
-                <label for="nbmaxarriere">Nombre max joueurs à l'arrière</label>
-                <input type="nbmaxarriere" class="form-control" name="nbmaxarriere" value ='{{ $equipe->nbmaxarriere }}'>
+                <label for="nbarriere">Nombre max joueurs à l'arrière</label>
+                <input type="nbarriere" class="form-control" name="nbarriere" value ='{{ $equipe->nbarriere }}'>
             </div>
 
             <div class="form-group">
-                <label for="nbmaxcentraux">Nombre max joueurs centraux</label>
-                <input type="nbmaxcentraux" class="form-control" name="nbmaxcentraux" value ='{{ $equipe->nbmaxcentraux }}'>
+                <label for="nbcentraux">Nombre max joueurs centraux</label>
+                <input type="nbcentraux" class="form-control" name="nbcentraux" value ='{{ $equipe->nbcentraux }}'>
             </div>
 
             <div class="form-group">
-                <label for="nbmaxremplacant">Nombre max joueurs remplacants</label>
-                <input type="nbmaxremplacant" class="form-control" name="nbmaxremplacant" value ='{{ $equipe->nbmaxremplacant }}'>
+                <label for="nbremplacant">Nombre max joueurs remplacants</label>
+                <input type="nbremplacant" class="form-control" name="nbremplacant" value ='{{ $equipe->nbremplacant }}'>
             </div>
 
             {{-- <div>
@@ -67,20 +67,20 @@
                 <input type='text' name='pays' value='{{ $equipe->pays }}'>
             </div> --}}
             {{-- <div>
-                <label for=''>nbmaxavant</label>
-                <input type='text' name='nbmaxavant' value='{{ $equipe->nbmaxavant }}'>
+                <label for=''>nbavant</label>
+                <input type='text' name='nbavant' value='{{ $equipe->nbavant }}'>
             </div>
             <div>
-                <label for=''>nbmaxarriere</label>
-                <input type='text' name='nbmaxarriere' value='{{ $equipe->nbmaxarriere }}'>
+                <label for=''>nbarriere</label>
+                <input type='text' name='nbarriere' value='{{ $equipe->nbarriere }}'>
             </div>
             <div>
-                <label for=''>nbmaxcentraux</label>
-                <input type='text' name='nbmaxcentraux' value='{{ $equipe->nbmaxcentraux }}'>
+                <label for=''>nbcentraux</label>
+                <input type='text' name='nbcentraux' value='{{ $equipe->nbcentraux }}'>
             </div>
             <div>
-                <label for=''>nbmaxremplacant</label>
-                <input type='text' name='nbmaxremplacant' value='{{ $equipe->nbmaxremplacant }}'>
+                <label for=''>nbremplacant</label>
+                <input type='text' name='nbremplacant' value='{{ $equipe->nbremplacant }}'>
             </div> --}}
             <button class="mt-3 btn btn-primary" type='submit'>Update</button> {{-- update_blade_anchor --}}
         </form>

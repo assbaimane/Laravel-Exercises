@@ -21,10 +21,10 @@ class EquipeFactory extends Factory
             'ville' => $this->faker->city,
             "pays" => $this->faker->country,
             "continent" => $this->faker->randomElement(['Europe','Hors-Europe']),
-            "nbmaxavant" => 2,
-            "nbmaxarriere" => 2,
-            "nbmaxcentraux" => 2,
-            "nbmaxremplacant" => 3
+            "nbavant" => 2,
+            "nbarriere" => 2,
+            "nbcentraux" => 2,
+            "nbremplacant" => 3
         ];
     }
 }

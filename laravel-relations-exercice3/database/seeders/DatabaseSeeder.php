@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Equipe::factory(5)->create();
-        Joueur::factory(45)->create();
         $this->call(
             RoleSeeder::class
         );
+        Equipe::factory(6)->create();
+        Joueur::factory(48)->create();
     }
 }

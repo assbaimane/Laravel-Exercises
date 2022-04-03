@@ -22,6 +22,7 @@ class RoleController extends Controller
         $role = new Role;
         $request->validate([
          'role'=> 'required',
+         'nbmax'=> 'required',
         ]); // store_validated_anchor;
         $role->role = $request->role;
         $role->save(); // store_anchor
@@ -42,6 +43,7 @@ class RoleController extends Controller
         $role = Role::find($id);
         $request->validate([
          'role'=> 'required',
+         'nbmax'=> 'required',
         ]); // update_validated_anchor;
         $role->role = $request->role;
         $role->save(); // update_anchor

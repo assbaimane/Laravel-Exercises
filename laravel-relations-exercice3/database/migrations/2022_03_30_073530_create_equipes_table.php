@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('ville');
             $table->string('pays');
             $table->string('continent');
-            $table->string('nbmaxavant');
-            $table->string('nbmaxarriere');
-            $table->string('nbmaxcentraux');
-            $table->string('nbmaxremplacant');
+            $table->integer('nbavant');
+            $table->integer('nbarriere');
+            $table->integer('nbcentraux');
+            $table->integer('nbremplacant');
             $table->timestamps();
         });
     }

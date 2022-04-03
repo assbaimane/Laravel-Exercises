@@ -17,8 +17,8 @@ class Joueur extends Model
         'email',
         'genre',
         'origine',
-        'role',
         'photo',
+        'role_id',
         'equipe_id'
     ]; // model_anchor
      

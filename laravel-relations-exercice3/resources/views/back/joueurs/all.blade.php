@@ -29,6 +29,7 @@
                     <th scope='col'>Genre</th>
                     <th scope='col'>Origine</th>
                     <th scope='col'>Role</th>
+                    <th scope='col'>Equipe</th>
                     <th scope='col'>Photo</th>
                     <th scope='col'>Action</th>
                 </tr> {{-- all_tr_anchor --}}
@@ -44,12 +45,14 @@
                         <td>{{ $joueur->email }}</td>
                         <td>{{ $joueur->genre }}</td>
                         <td>{{ $joueur->origine }}</td>
-                        <td>{{ $joueur->role }}</td>
+                        <td>{{ $joueur->role_id }}</td>
+                        <td>{{ $joueur->equipe_id }}</td>
                         <td>{{ $joueur->photo }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
                                 <form action='{{ route('joueur.destroy', $joueur->id) }}' method='post'>
                                     @csrf
+                                    @method('delete')
                                     <button class='btn btn-danger' type='submit'>Delete</button>
                                 </form>
                                 <a class='btn btn-primary' href='{{ route('joueur.edit', $joueur->id) }}' role='button'>Edit</a>

@@ -9,6 +9,7 @@
                     <th scope='col'>Nom</th>
                     <th scope='col'>Ville</th>
                     <th scope='col'>Pays</th>
+                    <th scope='col'>Continent</th>
                     <th scope='col'>Avant</th>
                     <th scope='col'>Arriere</th>
                     <th scope='col'>Centraux</th>
@@ -22,10 +23,11 @@
                     <td>{{ $equipe->nom }}</td>
                     <td>{{ $equipe->ville }}</td>
                     <td>{{ $equipe->pays }}</td>
-                    <td>{{ $equipe->nbmaxavant }}</td>
-                    <td>{{ $equipe->nbmaxarriere }}</td>
-                    <td>{{ $equipe->nbmaxcentraux }}</td>
-                    <td>{{ $equipe->nbmaxremplacant }}</td>
+                    <td>{{ $equipe->continent }}</td>
+                    <td>{{ $equipe->nbavant }}</td>
+                    <td>{{ $equipe->nbarriere }}</td>
+                    <td>{{ $equipe->nbcentraux }}</td>
+                    <td>{{ $equipe->nbremplacant }}</td>
                     <td> {{-- read_td_anchor --}}
                         <a class='btn btn-primary' href='{{ route('equipe.index') }}' role='button'>Back</a>
                     </td>

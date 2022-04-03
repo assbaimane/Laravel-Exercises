@@ -38,10 +38,10 @@
                         <td>{{ $equipe->nom }}</td>
                         <td>{{ $equipe->ville }}</td>
                         <td>{{ $equipe->pays }}</td>
-                        <td>{{ $equipe->nbmaxavant }}</td>
-                        <td>{{ $equipe->nbmaxarriere }}</td>
-                        <td>{{ $equipe->nbmaxcentraux }}</td>
-                        <td>{{ $equipe->nbmaxremplacant }}</td>
+                        <td>/{{ $equipe->nbavant }}</td>
+                        <td>/{{ $equipe->nbarriere }}</td>
+                        <td>/{{ $equipe->nbcentraux }}</td>
+                        <td>/{{ $equipe->nbremplacant }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
                                 <form action='{{ route('equipe.destroy', $equipe->id) }}' method='post'>
