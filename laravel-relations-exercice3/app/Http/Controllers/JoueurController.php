@@ -83,7 +83,7 @@ class JoueurController extends Controller
         $joueur->genre = $request->genre;
         $joueur->origine = $request->origine;
         $joueur->role_id = $request->role;
-        $joueur->equipe_id = $request->role;
+        $joueur->equipe_id = $request->equipe;
         $joueur->photo = $request->photo;
         $joueur->save(); // update_anchor
         return redirect()->route("joueur.index")->with('message', "Successful update !");
