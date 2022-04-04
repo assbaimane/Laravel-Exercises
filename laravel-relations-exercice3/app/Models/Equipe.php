@@ -20,7 +20,7 @@ class Equipe extends Model
         'nbremplacant',
     ]; // model_anchor
      
-    protected $table = 'equipes';
+    protected $table = 'equipes'; 
 
     public function joueurs(){
         return $this->hasMany(Joueur::class);

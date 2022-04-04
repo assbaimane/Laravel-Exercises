@@ -45,7 +45,7 @@ class JoueurFactory extends Factory
             "email" => $this->faker->email,
             "genre" => $this->faker->randomElement(["M", "F", "X"]),
             "origine" => $this->faker->country,
-            "photo" => $this->faker->imageUrl(640, 480, "people"),
+            // "photo" => $this->faker->imageUrl(640, 480, "people"), -> voir photofacyory
             "role_id" => $role,
             "equipe_id" => $equipe,
         ];

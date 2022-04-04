@@ -22,8 +22,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('genre');
             $table->string('origine');
-            $table->string('photo');
-            $table->foreignId('role_id') ->constrained('equipes','id')->onUpdate('cascade')
+            $table->foreignId('role_id') ->constrained('roles','id')->onUpdate('cascade')
             ->onDelete('cascade');
             $table->foreignId('equipe_id')->constrained('equipes','id')->onUpdate('cascade')
             ->onDelete('cascade');

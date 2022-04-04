@@ -11,7 +11,7 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('joueur.store') }}' method='post'>
+        <form action='{{ route('joueur.store') }}' method='post' enctype="multipart/form-data"> 
             @csrf
             <div class="mb-3 col-11">
                 <label for="joueurNom" class="form-label">Nom<span class="text-danger">*</span></label>
@@ -40,13 +40,13 @@
             <div class="mb-3 col-11">
                 <label for="joueurPays_origine" class="form-label">Pays d'Origine<span
                         class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="joueurPays_origine" name="pays_origine">
+                <input type="text" class="form-control" id="joueurPays_origine" name="origine">
             </div>
             {{-- Role --}}
             <div class="mb-3 col-6">
                 <div class="form-group">
                     <label class="mb-2">Role</label>
-                    <select name="role" class="form-control">
+                    <select name="role_id" class="form-control">
                         <option value="{{ null }}">-</option>
                         @foreach ($roles as $item)
                             <option value="{{ $item->id }}">{{ $item->role }}</option>
@@ -58,7 +58,7 @@
             <div class="mb-3 col-6">
                 <div class="form-group">
                     <label class="mb-2">Equipe</label>
-                    <select name="equipe" class="form-control">
+                    <select name="equipe_id" class="form-control">
                         <option value="{{ null }}">-</option>
                         @foreach ($equipes as $item)
                             <option value="{{ $item->id }}">{{ $item->nom }}</option>
@@ -68,7 +68,7 @@
             </div>
             <div class="mb-3 col-11">
                 <label for="joueurPhoto" class="form-label">Photo</label>
-                <input type="text" class="form-control" id="joueurPhoto" name="photo">
+                <input type="file" class="form-control" id="joueurPhoto" name="photo">
             </div>
             <button type='submit' class="btn btn-success my-4">Ajouter Joueur</button> {{-- create_blade_anchor --}}
             <a class='btn btn-secondary ms-3' href='{{ route('joueur.index') }}' role='button'>Annuler</a>

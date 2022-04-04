@@ -25,7 +25,7 @@ class JoueurController extends Controller
     public function store(Request $request)
     {
         $joueur = new Joueur;
-        $joueur = new Photo;
+        // $photo = new Photo; inutile car photocontroller
         $request->validate([
          'nom'=> 'required',
          'prenom'=> 'required',
@@ -34,8 +34,7 @@ class JoueurController extends Controller
          'email'=> 'required',
          'genre'=> 'required',
          'origine'=> 'required',
-         'role'=> 'required',
-         'photo_id'=> 'required',
+         'role_id'=> 'required',
          'equipe_id'=> 'required'
         ]); // store_validated_anchor;
         $joueur->nom = $request->nom;
@@ -45,10 +44,14 @@ class JoueurController extends Controller
         $joueur->email = $request->email;
         $joueur->genre = $request->genre;
         $joueur->origine = $request->origine;
-        $joueur->photo = $request->photo;
-        $joueur->role_id = $request->role;
-        $joueur->equipe_id = $request->equipe;
+        $joueur->role_id = $request->role_id;
+        $joueur->equipe_id = $request->equipe_id;
         $joueur->save(); // store_anchor
+        $photo = new Photo();
+        $photo->photo = $request->file('photo')->hashName();
+        $photo->joueur_id = $joueur->id;
+        $photo->save();
+        $request -> file('photo')->storePublicly('img','public'); //c'est pour enregistrer l'image dans laravel
         return redirect()->route("joueur.index")->with('message', "Successful storage !");
     }
     public function read($id)

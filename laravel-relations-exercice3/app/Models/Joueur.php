@@ -24,7 +24,7 @@ class Joueur extends Model
      
     protected $table = 'joueurs';
 
-    public function equipes(){
+    public function equipes(){ //Equipe au singulier car appartient à une seule equipe
         return $this->belongsTo(Equipe::class);
     }
 
@@ -32,7 +32,7 @@ class Joueur extends Model
     //     return $this->belongsTo(Role::class);
     // }
 
-    public function photos(){
+    public function photos(){ //Il a une seule photo donc singulier
         return $this->hasOne(Photo::class);
     }
 }
