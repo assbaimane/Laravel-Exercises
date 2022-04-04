@@ -1,7 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
     <div class='container'>
-        <h1>joueurs</h1>
+        <h1>Joueurs</h1>
         @if ($errors->any())
             <div class='alert alert-danger'>
                 <ul>
@@ -11,46 +11,69 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('joueur.update' , $joueur->id) }}' method='post'>
+        <form action='{{ route('joueur.update' , $joueur->id) }}' method='post' enctype="multipart/form-data">
             @csrf
             @method('put')
-            <div>
-                <label for=''>nom</label>
-                <input type='text' name='nom' value='{{ $joueur->nom }}'>
+            <div class="mt-3 mb-3 col-11">
+                <label for="joueurNom" class="form-label">Nom<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="joueurNom" name="nom" value={{ $joueur->nom }}>
             </div>
-            <div>
-                <label for=''>prenom</label>
-                <input type='text' name='prenom' value='{{ $joueur->prenom }}'>
+            <div class="mb-3 col-11">
+                <label for="joueurPrenom" class="form-label">Prénom<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="joueurPrenom" name="prenom" value={{ $joueur->prenom }}>
             </div>
-            <div>
-                <label for=''>age</label>
-                <input type='text' name='age' value='{{ $joueur->age }}'>
+            <div class="mb-3 col-11">
+                <label for="joueurAge" class="form-label">Age<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="joueurAge" name="age" value={{ $joueur->age }}>
             </div>
-            <div>
-                <label for=''>telephone</label>
-                <input type='text' name='telephone' value='{{ $joueur->telephone }}'>
+            <div class="mb-3 col-11">
+                <label for="joueurTelephone" class="form-label">Téléphone<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="joueurTelephone" name="telephone" value={{ $joueur->telephone }}>
             </div>
-            <div>
-                <label for=''>email</label>
-                <input type='text' name='email' value='{{ $joueur->email }}'>
+            <div class="mb-3 col-11">
+                <label for="joueurEmail" class="form-label">Email<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="joueurEmail" name="email" value={{ $joueur->email }}>
             </div>
-            <div>
-                <label for=''>genre</label>
-                <input type='text' name='genre' value='{{ $joueur->genre }}'>
+            <div class="mb-3 col-11">
+                <label for="joueurGenre" class="form-label">Genre<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="joueurGenre" name="genre" value={{ $joueur->genre }}>
             </div>
-            <div>
-                <label for=''>origine</label>
-                <input type='text' name='origine' value='{{ $joueur->origine }}'>
+            <div class="mb-3 col-11">
+                <label for="joueurPays_origine" class="form-label">Pays d'Origine<span
+                        class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="joueurPays_origine" name="origine" value={{ $joueur->origine }}>
             </div>
-            <div>
-                <label for=''>role</label>
-                <input type='text' name='role' value='{{ $joueur->role }}'>
+            {{-- Role --}}
+            <div class="mb-3 col-6">
+                <div class="form-group">
+                    <label class="mb-2">Role</label>
+                    <select name="role_id" class="form-control">
+                        <option value="{{ $roles[($joueur->role_id)-1]->id }}">{{ $roles[($joueur->role_id)-1]->role }}</option>
+                        @foreach ($roles as $item)
+                            <option value="{{ $item->id }}">{{ $item->role }}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
-            <div>
-                <label for=''>photo</label>
-                <input type='text' name='photo' value='{{ $joueur->photo }}'>
+            {{-- Role --}}
+            <div class="mb-3 col-6">
+                <div class="form-group">
+                    <label class="mb-2">Equipe</label>
+                    <select name="equipe_id" class="form-control">
+                        <option value="{{ $equipes[($joueur->equipe_id)-1]->id }}">{{ $equipes[($joueur->equipe_id)-1]->nom }}</option>
+                        @foreach ($equipes as $item)
+                            <option value="{{ $item->id }}">{{ $item->nom }}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
-            <button type='submit'>Update</button> {{-- update_blade_anchor --}}
+            <div class="mb-3 col-11">
+                <label for="joueurPhoto" class="form-label">Photo</label>
+                <img class="row m-3" src="{{ asset('img/'.$joueur->photos->photo) }}" height="110px" width="90px">
+                <input type="file" class="form-control" id="joueurPhoto" name="photo">
+            </div>
+            <button type='submit' class="btn btn-success my-4">Mettre à jour Joueur</button> {{-- create_blade_anchor --}}
+            <a class='btn btn-secondary ms-3' href='{{ route('joueur.index') }}' role='button'>Annuler</a>
         </form>
     </div>
 @endsection

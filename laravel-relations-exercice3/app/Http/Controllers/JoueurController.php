@@ -7,6 +7,7 @@ use App\Models\Joueur;
 use App\Models\Photo;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class JoueurController extends Controller
 {
@@ -34,8 +35,7 @@ class JoueurController extends Controller
          'email'=> 'required',
          'genre'=> 'required',
          'origine'=> 'required',
-         'role_id'=> 'required',
-         'equipe_id'=> 'required'
+         'role_id'=> 'required'
         ]); // store_validated_anchor;
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
@@ -54,15 +54,19 @@ class JoueurController extends Controller
         $request -> file('photo')->storePublicly('img','public'); //c'est pour enregistrer l'image dans laravel
         return redirect()->route("joueur.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $joueur = Joueur::find($id);
-        return view("/back/joueurs/read",compact("joueur"));
+        $roles = Role::all();
+        $equipes = Equipe::all();
+        return view("/back/joueurs/read",compact("joueur",'roles','equipes'));
     }
     public function edit($id)
     {
         $joueur = Joueur::find($id);
-        return view("/back/joueurs/edit",compact("joueur"));
+        $roles = Role::all();
+        $equipes = Equipe::all();
+        return view("/back/joueurs/edit",compact("joueur",'roles','equipes'));
     }
     public function update($id, Request $request)
     {
@@ -75,8 +79,7 @@ class JoueurController extends Controller
          'email'=> 'required',
          'genre'=> 'required',
          'origine'=> 'required',
-         'role'=> 'required',
-         'photo'=> 'required',
+         'role_id'=> 'required'
         ]); // update_validated_anchor;
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
@@ -85,15 +88,29 @@ class JoueurController extends Controller
         $joueur->email = $request->email;
         $joueur->genre = $request->genre;
         $joueur->origine = $request->origine;
-        $joueur->role_id = $request->role;
-        $joueur->equipe_id = $request->equipe;
-        $joueur->photo = $request->photo;
+        $joueur->role_id = $request->role_id;
+        $joueur->equipe_id = $request->equipe_id;
+
+        $photo = Photo::find($joueur->photos->id);
+        if($request->file('photo')){
+            echo"On reçoit une nouvelle image";
+            Storage::disk('public')->delete('img/' . $joueur->photos->photo);
+            $photo->photo = $request->file('photo')->hashName();
+            $photo->joueur_id = $joueur->id;
+            $photo->save();
+            $request -> file('photo')->storePublicly('img','public');
+        }
+        else{
+            echo"rienreçu";
+        }
+
         $joueur->save(); // update_anchor
         return redirect()->route("joueur.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {
         $joueur = Joueur::find($id);
+        Storage::disk('public')->delete('img/' . $joueur->photos->photo);
         $joueur->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }

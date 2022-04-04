@@ -47,7 +47,7 @@
                         <td>{{ $joueur->origine }}</td>
                         <td>{{ $joueur->role_id }}</td>
                         <td>{{ $joueur->equipe_id }}</td>
-                        <td><img src="{{ asset('img/'.$joueur->photos->photo) }}"/></td> 
+                        <td><img src="{{ asset('img/'.$joueur->photos->photo) }}" height="60px" width="50px"/></td> 
                         {{-- faire appel a la fonction photos puis la props --}}
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
