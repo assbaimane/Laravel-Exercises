@@ -7,8 +7,6 @@ use App\Http\Controllers\JoueurController;
 use App\Http\Controllers\EquipeController;
 use App\Models\Equipe;
 use App\Models\Joueur;
-use League\CommonMark\Node\Query\AndExpr;
-use Mockery\Matcher\AndAnyOtherArgs;
 
 Route::get('/', function () {
     $equipes = Equipe::all();
@@ -33,7 +31,7 @@ Route::get('/', function () {
             else{}
         }
     }
-    return view('welcome',compact('equipesCompletes','equipesNonCompletes','equipesEurope','equipesHorsEurope','joueursEquipe','joueursSansEquipe','joueursMasculin','joueursFeminin','joueursRepresentants'));
+    return view('welcome',compact('equipes','equipesCompletes','equipesNonCompletes','equipesEurope','equipesHorsEurope','joueursEquipe','joueursSansEquipe','joueursMasculin','joueursFeminin','joueursRepresentants'));
 });
 Route::resource('/back/equipe', EquipeController::class);
 Route::resource('/back/joueur', JoueurController::class);
