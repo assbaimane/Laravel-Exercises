@@ -20,7 +20,11 @@ class DatabaseSeeder extends Seeder
         $this->call(
             RoleSeeder::class
         );
-        Equipe::factory(6)->create();
+        // Equipe::factory(6)->create();
+        // Joueur::factory(48)->create();
+        // Photo::factory(48)->create();
+
+        Equipe::factory(4)->create();
         Joueur::factory(48)->create();
         Photo::factory(48)->create();
     }

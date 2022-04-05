@@ -34,6 +34,7 @@ class JoueurFactory extends Factory
         if ($role > 4) {   //si on a rempli tous les rôles d'une équipe
             $role = 1;      // on recommence avec le premier rôle 
             $b = 2;         //MYSTERE
+            if($equipe) //Ici je dois vérifier que j'ai pas atteint le niveau max d'équipe
             $equipe++;      //on change d'équipe, on passe à la suivante parce que la première est full
         }
 
