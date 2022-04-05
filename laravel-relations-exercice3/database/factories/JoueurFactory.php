@@ -20,7 +20,7 @@ class JoueurFactory extends Factory
         static $b = 1; //permet de faire le compte de combien d'élements de chaque rôle on a 
         static $equipe = 1; //equipe 1 pour dire qu'on commence la création des joueurs par là, 
         // jusqu'à ce que tous les postes soient occupés
-
+        
         if ($b > 2) { //ex: si on a deux avants
             $role++;  //on change de rôle : ex : on passe au rôle suivant : arrière
             if ($role === 4) {  // si on arrive à remplaçant ($role 4 = remplacant et donc valeur max = 3)
